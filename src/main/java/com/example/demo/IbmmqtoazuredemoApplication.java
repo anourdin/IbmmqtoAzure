@@ -31,7 +31,7 @@ public class IbmmqtoazuredemoApplication {
 	String recv(){
 	    try{
 	    	String connectionString = "Endpoint=sb://apicentrics.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=f0j9monM6TRW+QUS+709zVqWcjAB8zaFpbAR/Tk2uJc=";
-		    String azureQueueName = "indy-in";
+		    String azureQueueName = "ngridazure-out";
 		    String message =  jmsTemplate.receiveAndConvert("azureout").toString();
 	    	sendMessage(connectionString,azureQueueName,message);	
 	    	return "Success";
